@@ -80,7 +80,7 @@ export default function Contact() {
         services: [],
         message: ''
       })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -254,7 +254,7 @@ export default function Contact() {
                       Services Interested In
                     </label>
                     <div className="grid grid-cols-2 gap-2">
-                      {serviceOptions.map((service, index) => (
+                      {serviceOptions.map((service) => (
                         <label 
                           key={service} 
                           className="flex items-center space-x-2 cursor-pointer bg-gray-700/30 hover:bg-gray-700/50 
@@ -322,7 +322,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 bg-green-600/20 border border-green-600/50 rounded-lg text-green-400 text-center"
                   >
-                    Thank you! We'll get back to you within 24 hours.
+                    Thank you! We&apos;ll get back to you within 24 hours.
                   </motion.div>
                 )}
 
