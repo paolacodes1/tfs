@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Map, TreePine, Mountain, Box, RefreshCw, ArrowRight, CheckCircle } from 'lucide-react'
 import BeforeAfterSlider from './BeforeAfterSlider'
-import { formatCurrency } from '@/lib/utils'
 
 const services = [
   {
@@ -17,11 +16,6 @@ const services = [
       'Clearly defined boundaries',
       'More precise than satellite imagery',
       'Survey-grade accuracy'
-    ],
-    pricing: [
-      { range: 'Up to 500 acres', price: 18, unit: 'per acre' },
-      { range: '500-1,000 acres', price: 15, unit: 'per acre' },
-      { range: '1,000+ acres', price: 'Custom', unit: 'pricing' }
     ],
     beforeImage: '/images/aerial-raw.jpg',
     afterImage: '/images/aerial-mapped.jpg',
@@ -38,9 +32,6 @@ const services = [
       'Health assessment analysis',
       'Yield prediction reports'
     ],
-    pricing: [
-      { range: 'All farm sizes', price: 10, unit: 'per acre' }
-    ],
     beforeImage: '/images/trees-raw.jpg',
     afterImage: '/images/trees-counted.jpg',
     color: 'from-green-600 to-green-800'
@@ -49,15 +40,12 @@ const services = [
     id: 3,
     icon: Mountain,
     title: 'Topography Mapping',
-    description: 'Topographic maps with elevation data at 5-10m increments',
+    description: 'Topographic maps with elevation data up to 5-meter increments',
     features: [
       'AutoCAD format compatibility',
       'Contour map generation',
-      '5m or 10m elevation increments',
+      'Up to 5-meter elevation increments',
       'Slope analysis included'
-    ],
-    pricing: [
-      { range: 'All farm sizes', price: 5, unit: 'per acre' }
     ],
     beforeImage: '/images/topo-raw.jpg',
     afterImage: '/images/topo-mapped.jpg',
@@ -67,15 +55,12 @@ const services = [
     id: 4,
     icon: Box,
     title: '3D Model',
-    description: '3D farm model for terrain visualization, slope analysis, erosion detection',
+    description: '3D farm model for terrain visualization, slope analysis, erosion detection and drainage model',
     features: [
       'Interactive 3D visualization',
       'Slope angle analysis',
       'Erosion-prone area detection',
       'Road planning assistance'
-    ],
-    pricing: [
-      { range: 'All farm sizes', price: 5, unit: 'per acre' }
     ],
     beforeImage: '/images/3d-raw.jpg',
     afterImage: '/images/3d-model.jpg',
@@ -90,10 +75,7 @@ const services = [
       'Regular farm monitoring',
       'Change detection analysis',
       'Boundary security checks',
-      'Weed monitoring'
-    ],
-    pricing: [
-      { range: 'Custom packages', price: 'Contact', unit: 'for quote' }
+      'Crop monitoring'
     ],
     beforeImage: '/images/monitor-before.jpg',
     afterImage: '/images/monitor-after.jpg',
@@ -108,7 +90,8 @@ const additionalServices = [
   'Facade Inspections',
   'Construction Progress',
   'Stockpile & Volume Calculation',
-  'Aerial Photo & Videography'
+  'Aerial Photo & Videography',
+  'As-built Comparison'
 ]
 
 export default function Services() {
@@ -131,7 +114,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-32"
         >
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-12 h-0.5 bg-red-gradient" />
@@ -151,7 +134,7 @@ export default function Services() {
         </motion.div>
 
         {/* Main Services Grid */}
-        <div ref={servicesRef} className="space-y-16 mb-20">
+        <div ref={servicesRef} className="space-y-32 mb-32">
           {services.map((service, index) => {
             const Icon = service.icon
             const isEven = index % 2 === 0
@@ -196,28 +179,10 @@ export default function Services() {
                     ))}
                   </div>
 
-                  {/* Pricing */}
-                  <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                    <h4 className="text-white font-semibold mb-3">Pricing</h4>
-                    <div className="space-y-2">
-                      {service.pricing.map((price, priceIndex) => (
-                        <div key={priceIndex} className="flex justify-between items-center">
-                          <span className="text-gray-300">{price.range}</span>
-                          <span className="text-white font-medium">
-                            {typeof price.price === 'number' 
-                              ? `${formatCurrency(price.price)} ${price.unit}`
-                              : `${price.price} ${price.unit}`
-                            }
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* CTA Button */}
-                  <button className="btn-primary group">
-                    Get Quote for {service.title}
-                    <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  <button className="btn-primary group w-full flex items-center justify-between">
+                    <span>Get Quote for {service.title}</span>
+                    <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
 
@@ -265,6 +230,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={servicesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.5 }}
+            className="mb-32"
           >
             <button className="btn-primary text-lg">
               Discuss Custom Requirements

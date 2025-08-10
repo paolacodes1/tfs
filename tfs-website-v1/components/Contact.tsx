@@ -4,15 +4,14 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
   Send, 
   Clock, 
   User, 
   MessageSquare,
   Building,
-  Plane
+  Plane,
+  Mail,
+  Phone
 } from 'lucide-react'
 
 interface FormData {
@@ -91,27 +90,6 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '+60183505268',
-      link: 'tel:+60183505268',
-      color: 'text-green-400'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      content: 'adamgan@tiramafoto.com',
-      link: 'mailto:adamgan@tiramafoto.com',
-      color: 'text-blue-400'
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      content: '2.01C Menara BRDB, Jalan Maarof, 59000, Kuala Lumpur',
-      link: '#',
-      color: 'text-red-400'
-    },
-    {
       icon: Clock,
       title: 'Response Time',
       content: 'Within 24 hours',
@@ -155,7 +133,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="space-y-16">
           
           {/* Contact Form */}
           <motion.div
@@ -171,8 +149,8 @@ export default function Contact() {
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name and Email Row */}
-                <div className="grid md:grid-cols-2 gap-4">
+                {/* Top Row: Name, Email, Phone, Company */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                       <User className="w-4 h-4 inline mr-2" />
@@ -210,10 +188,7 @@ export default function Contact() {
                       placeholder="your@email.com"
                     />
                   </div>
-                </div>
-
-                {/* Phone and Company Row */}
-                <div className="grid md:grid-cols-2 gap-4">
+                  
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                       <Phone className="w-4 h-4 inline mr-2" />
@@ -251,50 +226,56 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Farm Size */}
-                <div>
-                  <label htmlFor="farmSize" className="block text-sm font-medium text-gray-300 mb-2">
-                    Farm Size (acres)
-                  </label>
-                  <select
-                    id="farmSize"
-                    name="farmSize"
-                    value={formData.farmSize}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                             text-white focus:border-red-500 focus:ring-2 focus:ring-red-500/20 
-                             transition-colors"
-                  >
-                    <option value="">Select farm size</option>
-                    <option value="under-100">Under 100 acres</option>
-                    <option value="100-500">100-500 acres</option>
-                    <option value="500-1000">500-1,000 acres</option>
-                    <option value="over-1000">Over 1,000 acres</option>
-                  </select>
-                </div>
+                {/* Farm Size and Services Row */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="farmSize" className="block text-sm font-medium text-gray-300 mb-2">
+                      Farm Size (acres)
+                    </label>
+                    <select
+                      id="farmSize"
+                      name="farmSize"
+                      value={formData.farmSize}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
+                               text-white focus:border-red-500 focus:ring-2 focus:ring-red-500/20 
+                               transition-colors"
+                    >
+                      <option value="">Select farm size</option>
+                      <option value="under-100">Under 100 acres</option>
+                      <option value="100-500">100-500 acres</option>
+                      <option value="500-1000">500-1,000 acres</option>
+                      <option value="over-1000">Over 1,000 acres</option>
+                    </select>
+                  </div>
 
-                {/* Services */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Services Interested In
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {serviceOptions.map(service => (
-                      <label key={service} className="flex items-center cursor-pointer group">
-                        <input
-                          type="checkbox"
-                          checked={formData.services.includes(service)}
-                          onChange={() => handleServiceChange(service)}
-                          className="w-4 h-4 text-red-500 bg-gray-800 border-gray-600 rounded 
-                                   focus:ring-red-500 focus:ring-2"
-                        />
-                        <span className="ml-2 text-sm text-gray-300 group-hover:text-white transition-colors">
-                          {service}
-                        </span>
-                      </label>
-                    ))}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Services Interested In
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {serviceOptions.map((service, index) => (
+                        <label 
+                          key={service} 
+                          className="flex items-center space-x-2 cursor-pointer bg-gray-700/30 hover:bg-gray-700/50 
+                                   rounded-lg p-2 transition-colors text-sm"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={formData.services.includes(service)}
+                            onChange={() => handleServiceChange(service)}
+                            className="w-4 h-4 text-red-600 bg-gray-700 border-gray-600 rounded 
+                                     focus:ring-red-500 focus:ring-2"
+                          />
+                          <span className="text-gray-300 text-xs leading-tight">
+                            {service}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
+
 
                 {/* Message */}
                 <div>
@@ -358,50 +339,48 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Contact Information - Side by Side */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={formInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={formInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
+            className="grid md:grid-cols-2 gap-8"
           >
-            {/* Contact Cards */}
-            <div className="space-y-4">
+            {/* Response Time Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={formInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               {contactInfo.map((info, index) => {
                 const Icon = info.icon
                 return (
-                  <motion.div
+                  <a
                     key={info.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    href={info.link}
+                    className="block p-6 bg-gray-800/50 border border-gray-700 rounded-xl 
+                             hover:bg-gray-700/50 hover:border-red-500/50 transition-all duration-300
+                             hover:shadow-lg hover:shadow-red-600/10 group"
                   >
-                    <a
-                      href={info.link}
-                      className="block p-6 bg-gray-800/50 border border-gray-700 rounded-xl 
-                               hover:bg-gray-700/50 hover:border-red-500/50 transition-all duration-300
-                               hover:shadow-lg hover:shadow-red-600/10 group"
-                    >
-                      <div className="flex items-start space-x-4">
-                        <div className={`p-3 bg-gray-700 rounded-lg ${info.color} group-hover:bg-gray-600 transition-colors`}>
-                          <Icon className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                          <p className="text-gray-300 text-sm leading-relaxed">{info.content}</p>
-                        </div>
+                    <div className="flex items-start space-x-4">
+                      <div className={`p-3 bg-gray-700 rounded-lg ${info.color} group-hover:bg-gray-600 transition-colors`}>
+                        <Icon className="w-6 h-6" />
                       </div>
-                    </a>
-                  </motion.div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">{info.title}</h4>
+                        <p className="text-gray-300 text-sm leading-relaxed">{info.content}</p>
+                      </div>
+                    </div>
+                  </a>
                 )
               })}
-            </div>
+            </motion.div>
 
             {/* Company Info Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={formInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={formInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.8 }}
               className="card-dark"
             >
               <div className="flex items-center space-x-4 mb-4">
@@ -429,11 +408,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-red-600/10 border border-red-600/30 rounded-lg">
-                <p className="text-sm text-red-300 font-medium text-center">
-                  Fast Turnaround: 5-7 days for farms under 500 acres
-                </p>
-              </div>
             </motion.div>
           </motion.div>
         </div>

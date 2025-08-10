@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, MapPin, Users, Award, Plane } from 'lucide-react'
+import { ChevronDown, Plane } from 'lucide-react'
 import { smoothScrollTo } from '@/lib/utils'
 
 export default function Hero() {
@@ -20,11 +20,6 @@ export default function Hero() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const stats = [
-    { icon: MapPin, label: 'Acres Mapped', value: '10,000+', color: 'text-red-500' },
-    { icon: Users, label: 'Happy Clients', value: '200+', color: 'text-blue-400' },
-    { icon: Award, label: 'Years Experience', value: '5+', color: 'text-green-400' },
-  ]
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-gray-900">
@@ -119,30 +114,6 @@ export default function Hero() {
                 </button>
               </motion.div>
 
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="grid grid-cols-3 gap-6 pt-8"
-              >
-                {stats.map((stat, index) => {
-                  const Icon = stat.icon
-                  return (
-                    <div key={stat.label} className="text-center">
-                      <div className="flex justify-center mb-2">
-                        <Icon className={`w-6 h-6 ${stat.color}`} />
-                      </div>
-                      <div className="text-2xl font-bold text-white mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        {stat.label}
-                      </div>
-                    </div>
-                  )
-                })}
-              </motion.div>
             </div>
 
             {/* Right Content - Drone Visual */}
