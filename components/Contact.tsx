@@ -9,7 +9,7 @@ import {
   User, 
   MessageSquare,
   Building,
-  Plane,
+  Drone,
   Mail,
   Phone
 } from 'lucide-react'
@@ -384,7 +384,7 @@ export default function Contact() {
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-red-gradient rounded-lg flex items-center justify-center">
-                  <Plane className="w-6 h-6 text-white" />
+                  <Drone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">TFS Aerial Solutions</h3>

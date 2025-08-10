@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Plane, Phone, Mail } from 'lucide-react'
+import { Menu, X, Drone, Phone, Mail } from 'lucide-react'
 import { smoothScrollTo } from '@/lib/utils'
 
 interface NavigationProps {
@@ -56,7 +56,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
               className="flex items-center space-x-2"
             >
               <div className="flex items-center justify-center w-10 h-10 bg-red-gradient rounded-lg">
-                <Plane className="w-6 h-6 text-white" />
+                <Drone className="w-6 h-6 text-white" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-white">TFS</span>
@@ -83,12 +83,8 @@ export default function Navigation({ className = '' }: NavigationProps) {
               ))}
             </div>
 
-            {/* Contact Info & CTA */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <Phone className="w-4 h-4" />
-                <span>+60183505268</span>
-              </div>
+            {/* CTA Button */}
+            <div className="hidden lg:flex items-center">
               <motion.button
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -144,22 +140,12 @@ export default function Navigation({ className = '' }: NavigationProps) {
               </div>
 
               <div className="mt-8 pt-8 border-t border-gray-800">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-gray-400">
-                    <Phone className="w-4 h-4" />
-                    <span>+60183505268</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-400">
-                    <Mail className="w-4 h-4" />
-                    <span>adamgan@tiramafoto.com</span>
-                  </div>
-                  <button
-                    onClick={() => handleNavClick('#contact')}
-                    className="btn-primary w-full mt-6"
-                  >
-                    Get Free Quote
-                  </button>
-                </div>
+                <button
+                  onClick={() => handleNavClick('#contact')}
+                  className="btn-primary w-full"
+                >
+                  Get Free Quote
+                </button>
               </div>
             </div>
           </motion.div>

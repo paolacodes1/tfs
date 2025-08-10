@@ -23,44 +23,31 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-gray-900">
-      {/* Background Elements */}
-      <div className="absolute inset-0 geometric-bg opacity-50" />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-70"
+        >
+          <source src="/drone_palms.mp4" type="video/mp4" />
+        </video>
+        {/* Video Overlay */}
+        <div className="absolute inset-0 bg-black/5" />
+      </div>
       
       {/* Parallax Background */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20 z-10"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(220, 38, 38, 0.15) 0%, transparent 50%)`
         }}
       />
 
-      {/* Animated Geometric Shapes */}
-      <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-red-500 rounded-full opacity-20"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 6 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-            style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + i * 10}%`,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Main Content */}
-      <div className="relative z-10 flex items-center min-h-screen">
+      <div className="relative z-20 flex items-center min-h-screen">
         <div className="container-center section-padding w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
@@ -72,7 +59,7 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
                 className="space-y-4"
               >
-                <div className="flex items-center space-x-2 text-red-500 font-medium">
+                <div className="flex items-center space-x-2 text-white font-medium">
                   <div className="w-12 h-0.5 bg-red-gradient" />
                   <span>CAAM Licensed UAV Pilots</span>
                 </div>
@@ -115,106 +102,6 @@ export default function Hero() {
               </motion.div>
 
             </div>
-
-            {/* Right Content - Drone Visual */}
-            <div className="relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="relative"
-              >
-                {/* Main Drone Container */}
-                <div className="relative w-full h-96 flex items-center justify-center">
-                  
-                  {/* Glowing Background Circle */}
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{ 
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="absolute w-80 h-80 rounded-full bg-red-gradient opacity-20 blur-2xl"
-                  />
-
-                  {/* Drone Icon */}
-                  <motion.div
-                    animate={{ 
-                      y: [-10, 10, -10],
-                      rotate: [0, 2, -2, 0]
-                    }}
-                    transition={{ 
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="relative z-10"
-                  >
-                    <div className="w-32 h-32 bg-red-gradient rounded-2xl flex items-center justify-center shadow-2xl">
-                      <Plane className="w-16 h-16 text-white" />
-                    </div>
-                    
-                    {/* Propeller Effects */}
-                    {[...Array(4)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-6 h-1 bg-white/30 rounded-full"
-                        animate={{ rotate: 360 }}
-                        transition={{ 
-                          duration: 0.1,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                        style={{
-                          top: i < 2 ? '-10px' : 'auto',
-                          bottom: i >= 2 ? '-10px' : 'auto',
-                          left: i % 2 === 0 ? '-15px' : 'auto',
-                          right: i % 2 === 1 ? '-15px' : 'auto',
-                          transformOrigin: i % 2 === 0 ? 'right center' : 'left center',
-                        }}
-                      />
-                    ))}
-                  </motion.div>
-
-                  {/* Orbital Elements */}
-                  {[...Array(3)].map((_, i) => (
-                    <motion.div
-                      key={`orbital-${i}`}
-                      className="absolute w-4 h-4 bg-blue-400 rounded-full opacity-60"
-                      animate={{
-                        rotate: 360,
-                      }}
-                      transition={{
-                        duration: 8 + i * 2,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                      style={{
-                        transformOrigin: `${120 + i * 40}px center`,
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Feature Highlights */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2"
-                >
-                  <div className="bg-gray-800/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-gray-700">
-                    <div className="text-sm text-gray-300 text-center">
-                      CAAM Licensed • High-Resolution • Real-time Data
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </div>
           </div>
         </div>
       </div>
@@ -224,7 +111,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
       >
         <button
           onClick={() => smoothScrollTo('services')}
