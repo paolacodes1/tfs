@@ -99,7 +99,7 @@ export default function Services() {
   const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="services" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="services" className="py-20 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 -left-20 w-40 h-40 bg-red-600/20 rounded-full blur-3xl" />
@@ -122,12 +122,12 @@ export default function Services() {
             <div className="w-12 h-0.5 bg-red-gradient" />
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Professional Aerial
             <span className="text-gradient block">Mapping Solutions</span>
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             From precision mapping to 3D modeling, our CAAM-licensed pilots deliver 
             comprehensive aerial solutions for modern agriculture and land management.
           </p>
@@ -152,20 +152,14 @@ export default function Services() {
                 
                 {/* Service Content */}
                 <div className={`space-y-6 ${isEven ? '' : 'lg:col-start-2'}`}>
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} 
-                                   flex items-center justify-center shadow-lg`}>
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                        {service.title}
-                      </h3>
-                      <div className="w-16 h-1 bg-red-gradient mt-2" />
-                    </div>
+                  <div>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-black">
+                      {service.title}
+                    </h3>
+                    <div className="w-16 h-1 bg-red-gradient mt-2" />
                   </div>
 
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-lg text-gray-700 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -174,7 +168,7 @@ export default function Services() {
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-3">
                         <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                        <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -208,7 +202,7 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-8">Additional Services</h3>
+          <h3 className="text-2xl font-bold text-black mb-8">Additional Services</h3>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
             {additionalServices.map((service, index) => (
@@ -217,11 +211,11 @@ export default function Services() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={servicesInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
-                         hover:bg-gray-700/50 hover:border-red-500/50 transition-all duration-300
+                className="bg-gray-100 border border-gray-300 rounded-lg p-4 
+                         hover:bg-gray-200 hover:border-red-500/50 transition-all duration-300
                          hover:shadow-lg hover:shadow-red-600/10"
               >
-                <span className="text-gray-300 text-sm font-medium">{service}</span>
+                <span className="text-gray-700 text-sm font-medium">{service}</span>
               </motion.div>
             ))}
           </div>
@@ -245,8 +239,8 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 1.8 }}
           className="mt-16 bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl p-8 border border-red-500/20 text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-4">Our Guarantee</h3>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-4">
+          <h3 className="text-2xl font-bold text-black mb-4">Our Guarantee</h3>
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto mb-4">
             Fast turnaround times: 5-7 working days for farms under 500 acres, 
             7-10 working days for larger farms. CAAM licensed pilots ensuring compliance and quality.
           </p>

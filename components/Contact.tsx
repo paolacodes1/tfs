@@ -99,7 +99,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-red-600 rounded-full blur-3xl" />
@@ -122,12 +122,12 @@ export default function Contact() {
             <div className="w-12 h-0.5 bg-red-gradient" />
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Ready to Transform
             <span className="text-gradient block">Your Farm Operations?</span>
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Get a free consultation and quote for your aerial mapping project. 
             Our CAAM-licensed pilots are ready to help you make data-driven decisions.
           </p>
@@ -142,8 +142,8 @@ export default function Contact() {
             animate={formInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="card-dark">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+            <div className="bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl p-8 border border-red-500/20">
+              <h3 className="text-2xl font-bold text-black mb-6 flex items-center">
                 <MessageSquare className="w-6 h-6 mr-3 text-red-500" />
                 Request a Quote
               </h3>
@@ -152,7 +152,7 @@ export default function Contact() {
                 {/* Top Row: Name, Email, Phone, Company */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       <User className="w-4 h-4 inline mr-2" />
                       Full Name *
                     </label>
@@ -163,15 +163,15 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                               text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
                                focus:ring-red-500/20 transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       <Mail className="w-4 h-4 inline mr-2" />
                       Email Address *
                     </label>
@@ -182,15 +182,15 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                               text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
                                focus:ring-red-500/20 transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       <Phone className="w-4 h-4 inline mr-2" />
                       Phone Number
                     </label>
@@ -200,15 +200,15 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                               text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
                                focus:ring-red-500/20 transition-colors"
                       placeholder="+60 123 456 789"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                       <Building className="w-4 h-4 inline mr-2" />
                       Company/Farm Name
                     </label>
@@ -218,8 +218,8 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                               text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
                                focus:ring-red-500/20 transition-colors"
                       placeholder="Your farm/company name"
                     />
@@ -229,7 +229,7 @@ export default function Contact() {
                 {/* Farm Size and Services Row */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="farmSize" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="farmSize" className="block text-sm font-medium text-gray-700 mb-2">
                       Farm Size (acres)
                     </label>
                     <select
@@ -237,7 +237,7 @@ export default function Contact() {
                       name="farmSize"
                       value={formData.farmSize}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
                                text-white focus:border-red-500 focus:ring-2 focus:ring-red-500/20 
                                transition-colors"
                     >
@@ -250,7 +250,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Services Interested In
                     </label>
                     <div className="grid grid-cols-2 gap-2">
@@ -267,7 +267,7 @@ export default function Contact() {
                             className="w-4 h-4 text-red-600 bg-gray-700 border-gray-600 rounded 
                                      focus:ring-red-500 focus:ring-2"
                           />
-                          <span className="text-gray-300 text-xs leading-tight">
+                          <span className="text-gray-700 text-xs leading-tight">
                             {service}
                           </span>
                         </label>
@@ -278,7 +278,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Additional Details
                   </label>
                   <textarea
@@ -287,8 +287,8 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg 
-                             text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
+                             text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
                              focus:ring-red-500/20 transition-colors resize-none"
                     placeholder="Tell us more about your project requirements, timeline, or any specific questions you have..."
                   />
@@ -357,17 +357,17 @@ export default function Contact() {
                   <a
                     key={info.title}
                     href={info.link}
-                    className="block p-6 bg-gray-800/50 border border-gray-700 rounded-xl 
-                             hover:bg-gray-700/50 hover:border-red-500/50 transition-all duration-300
+                    className="block p-6 bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl border border-red-500/20
+                             hover:from-red-600/15 hover:to-blue-600/15 hover:border-red-500/30 transition-all duration-300
                              hover:shadow-lg hover:shadow-red-600/10 group"
                   >
                     <div className="flex items-start space-x-4">
-                      <div className={`p-3 bg-gray-700 rounded-lg ${info.color} group-hover:bg-gray-600 transition-colors`}>
+                      <div className={`p-3 bg-white rounded-lg ${info.color} group-hover:bg-gray-100 transition-colors border border-gray-300`}>
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                        <p className="text-gray-300 text-sm leading-relaxed">{info.content}</p>
+                        <h4 className="text-black font-semibold mb-1">{info.title}</h4>
+                        <p className="text-gray-700 text-sm leading-relaxed">{info.content}</p>
                       </div>
                     </div>
                   </a>
@@ -380,30 +380,30 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={formInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="card-dark"
+              className="bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl p-8 border border-red-500/20"
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="w-12 h-12 bg-red-gradient rounded-lg flex items-center justify-center">
                   <Drone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">TFS Aerial Solutions</h3>
-                  <p className="text-gray-400 text-sm">A Tirama Foto Studios Company</p>
+                  <h3 className="text-xl font-bold text-black">TFS Aerial Solutions</h3>
+                  <p className="text-gray-600 text-sm">A Tirama Foto Studios Company</p>
                 </div>
               </div>
               
-              <div className="space-y-3 text-sm text-gray-300">
+              <div className="space-y-3 text-sm text-gray-700">
                 <div className="flex justify-between">
                   <span>Operations Manager:</span>
-                  <span className="text-white">Adam Gan</span>
+                  <span className="text-black">Adam Gan</span>
                 </div>
                 <div className="flex justify-between">
                   <span>License:</span>
-                  <span className="text-white">CAAM Licensed UAV Pilot</span>
+                  <span className="text-black">CAAM Licensed UAV Pilot</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Coverage:</span>
-                  <span className="text-white">3-500 acres per day</span>
+                  <span className="text-black">3-500 acres per day</span>
                 </div>
               </div>
 

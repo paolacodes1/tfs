@@ -42,8 +42,8 @@ export default function Navigation({ className = '' }: NavigationProps) {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800' 
-            : 'bg-transparent'
+            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
+            : 'bg-white/80'
         } ${className}`}
       >
         <nav className="container-center section-padding py-4">
@@ -56,11 +56,11 @@ export default function Navigation({ className = '' }: NavigationProps) {
               className="flex items-center space-x-2"
             >
               <div className="flex items-center justify-center w-10 h-10 bg-red-gradient rounded-lg">
-                <Drone className="w-6 h-6 text-white" />
+                <Drone className="w-6 h-6 text-black" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white">TFS</span>
-                <span className="text-xs text-gray-400">Aerial Solutions</span>
+                <span className="text-xl font-bold text-black">TFS</span>
+                <span className="text-xs text-gray-600">Aerial Solutions</span>
               </div>
             </motion.div>
 
@@ -73,7 +73,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + index * 0.1 }}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-gray-300 hover:text-white transition-colors duration-300 
+                  className="text-gray-700 hover:text-black transition-colors duration-300 
                            relative group font-medium"
                 >
                   {item.name}
@@ -102,7 +102,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+              className="md:hidden p-2 text-gray-700 hover:text-black transition-colors"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -119,8 +119,8 @@ export default function Navigation({ className = '' }: NavigationProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 bottom-0 z-40 w-80 bg-gray-900/95 backdrop-blur-md 
-                     border-l border-gray-800 md:hidden"
+            className="fixed top-0 right-0 bottom-0 z-40 w-80 bg-white/95 backdrop-blur-md 
+                     border-l border-gray-200 md:hidden"
           >
             <div className="flex flex-col h-full pt-20 px-6">
               <div className="space-y-6">
@@ -131,7 +131,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left text-lg text-gray-300 hover:text-white 
+                    className="block w-full text-left text-lg text-gray-700 hover:text-black 
                              transition-colors duration-300 py-2"
                   >
                     {item.name}
@@ -139,7 +139,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
                 ))}
               </div>
 
-              <div className="mt-8 pt-8 border-t border-gray-800">
+              <div className="mt-8 pt-8 border-t border-gray-200">
                 <button
                   onClick={() => handleNavClick('#contact')}
                   className="btn-primary w-full"
