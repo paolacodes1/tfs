@@ -32,7 +32,7 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover opacity-70"
         >
-          <source src="/drone_palms.mp4" type="video/mp4" />
+          <source src="/tfs/drone_palms.mp4" type="video/mp4" />
         </video>
         {/* Video Overlay */}
         <div className="absolute inset-0 bg-black/5" />
