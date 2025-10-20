@@ -94,17 +94,6 @@ export default function BeforeAfterSlider({
         <span className="text-white text-sm font-medium">{afterLabel}</span>
       </motion.div>
 
-      {/* Drag instruction */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
-          <span className="text-white text-xs">← Drag to compare →</span>
-        </div>
-      </motion.div>
     </div>
   )
 }

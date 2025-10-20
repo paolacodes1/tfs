@@ -10,7 +10,7 @@ const services = [
     id: 1,
     icon: Map,
     title: 'Aerial Mapping',
-    description: 'High-resolution aerial mapping for accurate, up-to-date farm maps including boundaries',
+    description: 'High-resolution aerial mapping for accurate, up-to-date site maps including boundaries',
     features: [
       'Digital maps in PDF/GIS formats',
       'Clearly defined boundaries',
@@ -55,7 +55,7 @@ const services = [
     id: 4,
     icon: Box,
     title: '3D Model',
-    description: '3D farm model for terrain visualization, slope analysis, erosion detection and drainage model',
+    description: '3D site model for terrain visualization, slope analysis, erosion detection and drainage planning',
     features: [
       'Interactive 3D visualization',
       'Slope angle analysis',
@@ -70,9 +70,9 @@ const services = [
     id: 5,
     icon: RefreshCw,
     title: 'Repetitive Monitoring',
-    description: 'Recurring aerial surveys to monitor changes in your farm over time',
+    description: 'Recurring aerial surveys to monitor changes in your site over time',
     features: [
-      'Regular farm monitoring',
+      'Regular site monitoring',
       'Change detection analysis',
       'Boundary security checks',
       'Crop monitoring'
@@ -128,8 +128,8 @@ export default function Services() {
           </h2>
           
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            From precision mapping to 3D modeling, our CAAM-licensed pilots deliver 
-            comprehensive aerial solutions for modern agriculture and land management.
+            From precision mapping to 3D modeling, our CAAM-licensed pilots deliver
+            comprehensive aerial solutions for agriculture, construction, mining, and real estate development.
           </p>
         </motion.div>
 
@@ -241,8 +241,8 @@ export default function Services() {
         >
           <h3 className="text-2xl font-bold text-black mb-4">Our Guarantee</h3>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto mb-4">
-            Fast turnaround times: 5-7 working days for farms under 500 acres, 
-            7-10 working days for larger farms. CAAM licensed pilots ensuring compliance and quality.
+            Fast turnaround times: 5-7 working days for sites under 500 acres,
+            7-10 working days for larger projects. CAAM licensed pilots ensuring compliance and quality.
           </p>
           <p className="text-sm text-gray-400 italic">
             * Maps and models provided are for reference only and are not legally binding surveys.

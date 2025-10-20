@@ -22,7 +22,7 @@ export default function Home() {
                 <span className="text-black font-bold">TFS Aerial Solutions</span>
               </div>
               <p className="text-gray-600 text-sm">
-                Professional aerial mapping for modern agriculture
+                Professional aerial mapping and surveying solutions
               </p>
             </div>
             

@@ -75,8 +75,8 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
-                  Transform your agricultural operations with cutting-edge drone technology. 
-                  Get accurate mapping, tree counts, and 3D terrain models for better farm management.
+                  Transform your operations with cutting-edge drone technology.
+                  From farms to construction sites, mines to buildings—get accurate mapping, analysis, and 3D terrain models.
                 </p>
               </motion.div>
 

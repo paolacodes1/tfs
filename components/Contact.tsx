@@ -19,7 +19,7 @@ interface FormData {
   email: string
   phone: string
   company: string
-  farmSize: string
+  projectSize: string
   services: string[]
   message: string
 }
@@ -39,7 +39,7 @@ export default function Contact() {
     email: '',
     phone: '',
     company: '',
-    farmSize: '',
+    projectSize: '',
     services: [],
     message: ''
   })
@@ -76,7 +76,7 @@ export default function Contact() {
         email: '',
         phone: '',
         company: '',
-        farmSize: '',
+        projectSize: '',
         services: [],
         message: ''
       })
@@ -124,12 +124,12 @@ export default function Contact() {
           
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Ready to Transform
-            <span className="text-gradient block">Your Farm Operations?</span>
+            <span className="text-gradient block">Your Operations?</span>
           </h2>
-          
+
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Get a free consultation and quote for your aerial mapping project. 
-            Our CAAM-licensed pilots are ready to help you make data-driven decisions.
+            Get a free consultation and quote for your aerial mapping project.
+            Our CAAM-licensed pilots are ready to help you make data-driven decisions for any industry.
           </p>
         </motion.div>
 
@@ -210,7 +210,7 @@ export default function Contact() {
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                       <Building className="w-4 h-4 inline mr-2" />
-                      Company/Farm Name
+                      Company/Project Name
                     </label>
                     <input
                       type="text"
@@ -218,30 +218,30 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
-                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2
                                focus:ring-red-500/20 transition-colors"
-                      placeholder="Your farm/company name"
+                      placeholder="Your company/project name"
                     />
                   </div>
                 </div>
 
-                {/* Farm Size and Services Row */}
+                {/* Project Size and Services Row */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="farmSize" className="block text-sm font-medium text-gray-700 mb-2">
-                      Farm Size (acres)
+                    <label htmlFor="projectSize" className="block text-sm font-medium text-gray-700 mb-2">
+                      Project Size (acres)
                     </label>
                     <select
-                      id="farmSize"
-                      name="farmSize"
-                      value={formData.farmSize}
+                      id="projectSize"
+                      name="projectSize"
+                      value={formData.projectSize}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg 
-                               text-white focus:border-red-500 focus:ring-2 focus:ring-red-500/20 
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg
+                               text-gray-700 focus:border-red-500 focus:ring-2 focus:ring-red-500/20
                                transition-colors"
                     >
-                      <option value="">Select farm size</option>
+                      <option value="">Select project size</option>
                       <option value="under-100">Under 100 acres</option>
                       <option value="100-500">100-500 acres</option>
                       <option value="500-1000">500-1,000 acres</option>
@@ -255,16 +255,16 @@ export default function Contact() {
                     </label>
                     <div className="grid grid-cols-2 gap-2">
                       {serviceOptions.map((service) => (
-                        <label 
-                          key={service} 
-                          className="flex items-center space-x-2 cursor-pointer bg-gray-700/30 hover:bg-gray-700/50 
-                                   rounded-lg p-2 transition-colors text-sm"
+                        <label
+                          key={service}
+                          className="flex items-center space-x-2 cursor-pointer bg-white hover:bg-gray-100
+                                   rounded-lg p-2 transition-colors text-sm border border-gray-300"
                         >
                           <input
                             type="checkbox"
                             checked={formData.services.includes(service)}
                             onChange={() => handleServiceChange(service)}
-                            className="w-4 h-4 text-red-600 bg-gray-700 border-gray-600 rounded 
+                            className="w-4 h-4 text-red-600 bg-white border-gray-300 rounded
                                      focus:ring-red-500 focus:ring-2"
                           />
                           <span className="text-gray-700 text-xs leading-tight">
@@ -338,77 +338,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Information - Side by Side */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={formInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid md:grid-cols-2 gap-8"
-          >
-            {/* Response Time Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={formInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              {contactInfo.map((info) => {
-                const Icon = info.icon
-                return (
-                  <a
-                    key={info.title}
-                    href={info.link}
-                    className="block p-6 bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl border border-red-500/20
-                             hover:from-red-600/15 hover:to-blue-600/15 hover:border-red-500/30 transition-all duration-300
-                             hover:shadow-lg hover:shadow-red-600/10 group"
-                  >
-                    <div className="flex items-start space-x-4">
-                      <div className={`p-3 bg-white rounded-lg ${info.color} group-hover:bg-gray-100 transition-colors border border-gray-300`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="text-black font-semibold mb-1">{info.title}</h4>
-                        <p className="text-gray-700 text-sm leading-relaxed">{info.content}</p>
-                      </div>
-                    </div>
-                  </a>
-                )
-              })}
-            </motion.div>
-
-            {/* Company Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={formInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-gradient-to-r from-red-600/10 to-blue-600/10 rounded-2xl p-8 border border-red-500/20"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-red-gradient rounded-lg flex items-center justify-center">
-                  <Drone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">TFS Aerial Solutions</h3>
-                  <p className="text-gray-600 text-sm">A Tirama Foto Studios Company</p>
-                </div>
-              </div>
-              
-              <div className="space-y-3 text-sm text-gray-700">
-                <div className="flex justify-between">
-                  <span>Operations Manager:</span>
-                  <span className="text-black">Adam Gan</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>License:</span>
-                  <span className="text-black">CAAM Licensed UAV Pilot</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Coverage:</span>
-                  <span className="text-black">3-500 acres per day</span>
-                </div>
-              </div>
-
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>
