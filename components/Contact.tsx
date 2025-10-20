@@ -238,14 +238,16 @@ export default function Contact() {
                       value={formData.projectSize}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg
-                               text-gray-700 focus:border-red-500 focus:ring-2 focus:ring-red-500/20
-                               transition-colors"
+                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2
+                               focus:ring-red-500/20 transition-colors appearance-none cursor-pointer
+                               bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3cpath%20fill%3D%22%23374151%22%20d%3D%22M10.293%203.293L6%207.586%201.707%203.293A1%201%200%2000.293%204.707l5%205a1%201%200%2001.414%200l5-5a1%201%200%2000-1.414-1.414z%22%2F%3E%3c%2Fsvg%3E')]
+                               bg-[length:1.25rem] bg-[position:right_0.75rem_center] bg-no-repeat"
                     >
-                      <option value="">Select project size</option>
-                      <option value="under-100">Under 100 acres</option>
-                      <option value="100-500">100-500 acres</option>
-                      <option value="500-1000">500-1,000 acres</option>
-                      <option value="over-1000">Over 1,000 acres</option>
+                      <option value="" className="text-gray-500">Select project size</option>
+                      <option value="under-100" className="text-black">Under 100 acres</option>
+                      <option value="100-500" className="text-black">100-500 acres</option>
+                      <option value="500-1000" className="text-black">500-1,000 acres</option>
+                      <option value="over-1000" className="text-black">Over 1,000 acres</option>
                     </select>
                   </div>
 

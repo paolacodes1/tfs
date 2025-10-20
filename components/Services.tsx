@@ -220,16 +220,6 @@ export default function Services() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="mb-32"
-          >
-            <button className="btn-primary text-lg">
-              Discuss Custom Requirements
-            </button>
-          </motion.div>
         </motion.div>
 
         {/* Service Guarantee */}
