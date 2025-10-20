@@ -17,8 +17,8 @@ const services = [
       'More precise than satellite imagery',
       'Survey-grade accuracy'
     ],
-    beforeImage: '/images/aerial-raw.jpg',
-    afterImage: '/images/aerial-mapped.jpg',
+    beforeImage: '/tfs/Services/Aerial Mapping Before.png',
+    afterImage: '/tfs/Services/Aerial Mapping After.png',
     color: 'from-blue-600 to-blue-800'
   },
   {
@@ -32,8 +32,8 @@ const services = [
       'Health assessment analysis',
       'Yield prediction reports'
     ],
-    beforeImage: '/images/trees-raw.jpg',
-    afterImage: '/images/trees-counted.jpg',
+    beforeImage: '/tfs/Services/Tree Count & Yield Estimation Before.png',
+    afterImage: '/tfs/Services/Tree Count & Yield Estimation After.png',
     color: 'from-green-600 to-green-800'
   },
   {
@@ -47,8 +47,8 @@ const services = [
       'Up to 5-meter elevation increments',
       'Slope analysis included'
     ],
-    beforeImage: '/images/topo-raw.jpg',
-    afterImage: '/images/topo-mapped.jpg',
+    beforeImage: '/tfs/Services/Topography Mapping Before.png',
+    afterImage: '/tfs/Services/Topography Mapping After.png',
     color: 'from-purple-600 to-purple-800'
   },
   {
@@ -77,8 +77,8 @@ const services = [
       'Boundary security checks',
       'Crop monitoring'
     ],
-    beforeImage: '/images/monitor-before.jpg',
-    afterImage: '/images/monitor-after.jpg',
+    beforeImage: '/tfs/Services/Repetitive Monitoring Before.png',
+    afterImage: '/tfs/Services/Repetitive Monitoring After.png',
     color: 'from-red-600 to-red-800'
   }
 ]

@@ -28,29 +28,25 @@ export default function BeforeAfterSlider({
     <div className={`relative w-full h-80 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 ${className}`}>
       {/* Before Image (Full) */}
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gray-600 rounded-lg mb-4 mx-auto" />
-            <p className="text-gray-400 text-sm">{beforeLabel}</p>
-            <p className="text-gray-500 text-xs mt-1">Placeholder Image</p>
-          </div>
-        </div>
+        <img
+          src={beforeImage}
+          alt={beforeLabel}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* After Image (Clipped) */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           clipPath: `polygon(${sliderPosition}% 0%, 100% 0%, 100% 100%, ${sliderPosition}% 100%)`
         }}
       >
-        <div className="w-full h-full bg-gray-600 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-red-500 rounded-lg mb-4 mx-auto" />
-            <p className="text-white text-sm">{afterLabel}</p>
-            <p className="text-gray-300 text-xs mt-1">Processed Data</p>
-          </div>
-        </div>
+        <img
+          src={afterImage}
+          alt={afterLabel}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Slider Line */}
