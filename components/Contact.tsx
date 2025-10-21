@@ -238,10 +238,16 @@ export default function Contact() {
                       value={formData.projectSize}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg
-                               text-black placeholder-gray-500 focus:border-red-500 focus:ring-2
-                               focus:ring-red-500/20 transition-colors appearance-none cursor-pointer
-                               bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3cpath%20fill%3D%22%23374151%22%20d%3D%22M10.293%203.293L6%207.586%201.707%203.293A1%201%200%2000.293%204.707l5%205a1%201%200%2001.414%200l5-5a1%201%200%2000-1.414-1.414z%22%2F%3E%3c%2Fsvg%3E')]
-                               bg-[length:1.25rem] bg-[position:right_0.75rem_center] bg-no-repeat"
+                               text-black focus:border-red-500 focus:ring-2
+                               focus:ring-red-500/20 transition-colors cursor-pointer"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
+                        backgroundPosition: 'right 0.5rem center',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: '1.5em 1.5em',
+                        paddingRight: '2.5rem',
+                        appearance: 'none'
+                      }}
                     >
                       <option value="" className="text-gray-500">Select project size</option>
                       <option value="under-100" className="text-black">Under 100 acres</option>
