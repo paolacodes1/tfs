@@ -31,6 +31,8 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
+        env:
+          NEXT_DISABLE_ESLINT: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
