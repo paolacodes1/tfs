@@ -74,26 +74,6 @@ export default function BeforeAfterSlider({
         onChange={handleSliderChange}
         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30"
       />
-
-      {/* Labels */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
-      >
-        <span className="text-white text-sm font-medium">{beforeLabel}</span>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.7 }}
-        className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full"
-      >
-        <span className="text-white text-sm font-medium">{afterLabel}</span>
-      </motion.div>
-
     </div>
   )
 }
