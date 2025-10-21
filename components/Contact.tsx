@@ -246,14 +246,15 @@ export default function Contact() {
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: '1.5em 1.5em',
                         paddingRight: '2.5rem',
-                        appearance: 'none'
+                        appearance: 'none',
+                        color: formData.projectSize ? '#000' : '#6b7280'
                       }}
                     >
-                      <option value="" className="text-gray-500">Select project size</option>
-                      <option value="under-100" className="text-black">Under 100 acres</option>
-                      <option value="100-500" className="text-black">100-500 acres</option>
-                      <option value="500-1000" className="text-black">500-1,000 acres</option>
-                      <option value="over-1000" className="text-black">Over 1,000 acres</option>
+                      <option value="">Select project size</option>
+                      <option value="under-100">Under 100 acres</option>
+                      <option value="100-500">100-500 acres</option>
+                      <option value="500-1000">500-1,000 acres</option>
+                      <option value="over-1000">Over 1,000 acres</option>
                     </select>
                   </div>
 
