@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://tfs-aerial.github.io/sitemap.xml
